@@ -1,1 +1,561 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woestijn Ecosysteem</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- SVG Woestijn achtergrond -->
+        <svg class="desert-svg" width="100%" height="100%" viewBox="0 0 1332 746" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2)">
+                <rect width="1332" height="746" fill="url(#paint0_linear_1_2)"/>
+                
+                <!-- Zon (clickable) -->
+                <g id="sun" class="clickable" data-name="Zon" data-info="De zon is de primaire energiebron voor het woestijn-ecosysteem. Zonder de zon kunnen planten geen fotosynthese uitvoeren. De intense zonnestraling zorgt voor extreem hoge temperaturen overdag, wat invloed heeft op alle levensvormen in de woestijn." data-type="energie">
+                    <circle cx="666" cy="572" r="190" fill="#FFD8D8" filter="url(#filter0_fg_1_2)"/>
+                </g>
+                
+                <!-- Bergen links (clickable) -->
+                <g id="mountain-left" class="clickable" data-name="Rotsformatie Links" data-info="Rotsformaties bieden essentiële schuilplaatsen en schaduw in het woestijn-ecosysteem. Ze creëren micro-klimaten waar dieren kunnen schuilen tegen de extreme hitte. De rotsen slaan ook warmte op overdag en geven deze 's nachts af." data-type="habitat">
+                    <path d="M15 486H38L58 445L82 430L103 457H143L167 467L205 515L218 495L265 506L273 480L297 437L316 457L321 495L344 521L406 584L344 608L-18 597V559L-6 521L4 501L15 486Z" fill="#BB5D48" filter="url(#filter3_f_1_2)"/>
+                    <path d="M9 479H32L50 442L83 425L101 488L145 479L180 526L209 506L246 520L268 485L285 448L308 466V506L323 526V564L374 602H-23V564L-11 526L-1 506L9 479Z" fill="#B04B34" filter="url(#filter4_f_1_2)"/>
+                </g>
+                
+                <!-- Bergen rechts (clickable) -->
+                <g id="mountain-right" class="clickable" data-name="Rotsformatie Rechts" data-info="Deze rotsformaties zijn cruciaal voor de biodiversiteit. Ze bieden beschutting tegen wind en regen, en onder de rotsen ontstaan kleine ecosystemen waar vocht langer bewaard blijft. Dit maakt ze belangrijke plekken voor veel organismen." data-type="habitat">
+                    <path d="M1294 501H1271L1251 460L1227 445L1206 472H1166L1142 482L1104 530L1091 510L1044 521L1036 495L1012 452L993 472L988 510L965 536L903 599L965 623L1327 612V574L1315 536L1305 516L1294 501Z" fill="#BB5D48" filter="url(#filter1_f_1_2)"/>
+                    <path d="M1300 494H1277L1259 457L1226 440L1208 503L1164 494L1129 541L1100 521L1063 535L1041 500L1024 463L1001 481V521L986 541V579L935 617H1332V579L1320 541L1310 521L1300 494Z" fill="#B04B34" filter="url(#filter2_f_1_2)"/>
+                </g>
+                
+                <!-- Zandlaag 1 (clickable) -->
+                <g id="sand-layer-1" class="clickable" data-name="Zandduinen" data-info="De zandduinen zijn het resultaat van wind-erosie en vormen het belangrijkste landschap van de woestijn. Het zand beschermt zaadjes en kleine organismen, en houdt vocht vast in diepere lagen. Veel dieren graven zich in het zand in om aan de hitte te ontsnappen." data-type="bodem">
+                    <path d="M1332 572C1332 572 1206 595.08 1164 595.08C1122 595.08 1056 610 1004 595.08C952 580.16 932 572 846 572C760 572 722 606 666 595.08C610 584.16 534 572 478 572C422 572 354 595.08 316 595.08C278 595.08 192 572 166.5 572C141 572 0 572 0 572V746H666H1332V572Z" fill="#C57530" filter="url(#filter5_f_1_2)"/>
+                </g>
+                
+                <!-- Zandlaag 2 (clickable) -->
+                <g id="sand-layer-2" class="clickable" data-name="Bodemlaag" data-info="Deze bodemlaag is rijk aan mineralen en bevat de wortelsystemen van woestijnplanten. Hier wordt water opgeslagen na zeldzame regenval. De bodem is essentieel voor het recyclen van voedingsstoffen en vormt de basis van de voedselketen." data-type="bodem">
+                    <path d="M1332 614.566L1164 632H1004L846 614.566L666 632L478 614.566L316 632L166.5 614.566H0V746H666H1332V614.566Z" fill="#AD431C" filter="url(#filter6_f_1_2)"/>
+                </g>
+                
+                <!-- Ondergrond (clickable) -->
+                <g id="underground" class="clickable" data-name="Ondergrond" data-info="De diepe ondergrond bevat grondwater dat door sommige planten met diepe wortels bereikt kan worden. Deze laag is cruciaal voor de overleving tijdens langdurige droogte. Hier bevinden zich ook organismen die helpen bij de afbraak van organisch materiaal." data-type="bodem">
+                    <path d="M0 660L164 680L333 660L502 694L666 660L850 640L1008 694L1165.5 660H1332V746H666H0V660Z" fill="#80190E"/>
+                </g>
+                
+                <!-- Cactus Links (clickable) -->
+                <g id="cactus-left" class="clickable cactus" data-name="Saguaro Cactus" data-info="De Saguaro cactus is een producent en sleutelsoort in het ecosysteem. Hij slaat tot 750 liter water op in zijn stam tijdens regenperiodes. Zijn bloemen leveren nectar voor bestuivers, en zijn vruchten zijn voedsel voor vogels en kleine zoogdieren. De cactus kan 200 jaar oud worden." data-type="producent">
+                    <path d="M217 465C238.69 465 231.93 515.392 231.735 578.098C234.9 577.156 238.353 575.879 242 574C244.836 572.539 247.761 571.718 250.66 571.405C249.012 566.83 248 561.658 248 556C248 533.356 254.716 515 263 515C271.284 515 278 533.356 278 556C278 569.659 279.012 580.485 277.997 586.925C277.997 586.95 278 586.975 278 587C278 588.203 277.658 589.372 277.016 590.493C276.587 591.428 276.04 592.153 275.347 592.658C269.985 598.137 257.076 602 242 602C238.175 602 234.75 601.749 231.71 601.289C231.554 655.732 230.124 698 217 698C202.509 698 202.273 646.464 202.27 583.907C198.057 584.611 193.453 585 188.629 585C178.071 585 170.15 584.801 165.011 583.41C164.672 583.468 164.335 583.5 164 583.5C155.716 583.5 152 565.644 152 543C152 520.356 158.716 502 167 502C175.284 502 182 520.356 182 543C182 549.068 181.301 554.791 180.12 559.92C182.781 560.015 185.628 560.507 188.629 561.5C193.219 563.019 197.816 563.781 202.122 564.209C201.213 508.115 196.937 465 217 465Z" fill="#80190E"/>
+                </g>
+                
+                <!-- Cactus Midden (clickable) -->
+                <g id="cactus-mid" class="clickable cactus" data-name="Jonge Cactus" data-info="Deze jonge cactus is een producent in groei. Hij produceert zuurstof door fotosynthese en biedt kleine insecten beschutting tussen zijn doornen. Jonge cactussen zijn kwetsbaar maar essentieel voor het voortbestaan van de soort." data-type="producent">
+                    <path d="M970.952 509C985.952 509 981.28 541.441 981.146 581.81C983.333 581.204 985.721 580.381 988.242 579.172C990.204 578.231 992.226 577.703 994.231 577.501C993.092 574.556 992.392 571.226 992.392 567.584C992.392 553.007 997.036 541.189 1002.76 541.188C1008.49 541.188 1013.14 553.007 1013.14 567.584C1013.14 576.376 1013.84 583.344 1013.14 587.49C1013.14 587.507 1013.14 587.524 1013.14 587.541C1013.14 588.319 1012.9 589.074 1012.45 589.799C1012.16 590.396 1011.78 590.86 1011.3 591.184C1007.59 594.71 998.668 597.197 988.242 597.197C985.597 597.197 983.226 597.036 981.124 596.739C981.016 631.789 980.028 659 970.952 659C960.931 659 960.767 625.821 960.765 585.548C957.851 586.001 954.667 586.253 951.331 586.253C944.031 586.253 938.555 586.123 935.001 585.229C934.766 585.266 934.532 585.287 934.299 585.287C928.57 585.287 926 573.792 926 559.215C926 544.637 930.645 532.819 936.374 532.819C942.103 532.82 946.747 544.638 946.747 559.215C946.747 563.121 946.264 566.805 945.447 570.106C947.287 570.168 949.256 570.485 951.331 571.124C954.505 572.102 957.685 572.593 960.663 572.868C960.034 536.756 957.078 509 970.952 509Z" fill="#AD431C" filter="url(#filter7_f_1_2)"/>
+                </g>
+                
+                <!-- Cactus Rechts (clickable) -->
+                <g id="cactus-right" class="clickable cactus" data-name="Oude Cactus" data-info="Deze oude cactus heeft al vele droogtes overleefd en is een veteraan van het ecosysteem. Zijn grote omvang betekent dat hij veel water kan opslaan. Vogels maken nesten in zijn armen, en zijn schaduw biedt verkoeling voor kleinere planten en dieren." data-type="producent">
+                    <path d="M1190 447C1208.52 447 1206.3 483.738 1205.13 533.512C1210.46 533.167 1216.42 532.469 1222.37 530.5C1225.37 529.507 1228.22 529.015 1230.88 528.92C1229.7 523.791 1229 518.068 1229 512C1229 489.357 1235.72 471.001 1244 471C1252.28 471 1259 489.356 1259 512C1259 534.644 1255.28 552.5 1247 552.5C1246.66 552.5 1246.33 552.468 1245.99 552.41C1240.85 553.8 1232.93 554 1222.37 554C1216 554 1210 553.322 1204.79 552.134C1204.75 555.644 1204.73 559.2 1204.73 562.794C1204.73 626.745 1204.73 680 1190 680C1179.17 679.999 1176.3 651.215 1175.55 610.558C1171.65 611.481 1166.96 612 1161.45 612C1146.37 612 1133.46 608.137 1128.1 602.658C1127.41 602.153 1126.86 601.428 1126.43 600.493C1125.79 599.372 1125.45 598.203 1125.45 597C1125.45 596.975 1125.45 596.95 1125.45 596.925C1124.44 590.485 1125.45 579.659 1125.45 566C1125.45 543.356 1132.17 525 1140.45 525C1148.73 525 1155.45 543.356 1155.45 566C1155.45 571.658 1154.44 576.83 1152.79 581.405C1155.69 581.718 1158.61 582.539 1161.45 584C1166.53 586.619 1171.24 588.07 1175.31 589.069C1175.27 580.603 1175.27 571.804 1175.27 562.794C1175.27 498.843 1168 447.001 1190 447Z" fill="#80190E"/>
+                </g>
+                
+                <!-- Kleine plant (clickable) -->
+                <g id="small-plant" class="clickable plant" data-name="Doornstruik" data-info="Doornstruiken zijn pioniers die helpen de bodem te stabiliseren. Hun diepe wortels bereiken grondwater en hun doornen beschermen tegen herbivoren. Ze bieden schaduw voor kleine planten en zijn belangrijk voor het vasthouden van voedingsstoffen in de bodem." data-type="producent">
+                    <path d="M425.767 517C432.539 517 431.729 527.563 431.302 541.875C433.249 541.776 435.43 541.577 437.605 541.011C438.703 540.725 439.744 540.585 440.717 540.558C440.285 539.083 440.029 537.437 440.029 535.691C440.029 529.18 442.485 523.901 445.514 523.901C448.543 523.902 450.999 529.18 450.999 535.691C450.998 542.202 449.64 547.337 446.611 547.337C446.49 547.337 446.368 547.326 446.246 547.31C444.367 547.71 441.469 547.769 437.605 547.769C435.274 547.769 433.082 547.573 431.177 547.231C431.163 548.241 431.154 549.263 431.154 550.297C431.154 568.686 431.154 584 425.767 584C421.807 584 420.76 575.722 420.482 564.031C419.058 564.297 417.344 564.446 415.328 564.446C409.819 564.446 405.101 563.336 403.138 561.763C402.886 561.62 402.689 561.412 402.533 561.147C402.293 560.822 402.164 560.483 402.164 560.133C402.164 560.124 402.164 560.116 402.165 560.107C401.795 558.255 402.164 555.144 402.164 551.219C402.164 544.708 404.619 539.429 407.648 539.429C410.677 539.429 413.133 544.708 413.133 551.219C413.133 552.847 412.762 554.336 412.158 555.652C413.219 555.742 414.29 555.974 415.328 556.395C417.187 557.148 418.907 557.564 420.397 557.852C420.382 555.417 420.38 552.888 420.38 550.297C420.38 531.908 417.723 517 425.767 517Z" fill="#C57530" filter="url(#filter8_f_1_2)"/>
+                </g>
+                
+                <!-- Wolken (clickable) -->
+                <g id="cloud-1" class="clickable cloud" data-name="Wolkenformatie" data-info="Wolken zijn zeldzaam in de woestijn maar cruciaal voor het ecosysteem. Ze brengen de kostbare regen die het leven in stand houdt. Zelfs zonder regen bieden ze tijdelijke verkoeling door schaduwen te werpen." data-type="water">
+                    <path d="M307.337 186C286.039 186 266.912 192.098 253.791 201.778C247.349 200.258 240.407 199.429 233.172 199.429C208.175 199.429 186.683 209.313 177.204 223.473C175.505 223.361 173.779 223.302 172.031 223.302C146.057 223.302 125 235.994 125 251.65C125 267.307 146.057 280 172.031 280C182.963 280 193.024 277.751 201.011 273.979C210.354 277.795 221.372 280 233.172 280C246.383 280 258.614 277.238 268.611 272.545C279.777 277.262 293.07 280 307.337 280C321.876 280 335.401 277.154 346.696 272.271C355.119 277.061 366.474 280 378.969 280C404.943 280 426 267.307 426 251.65C426 235.994 404.943 223.302 378.969 223.302C378.459 223.302 377.952 223.308 377.446 223.317C370.644 202.005 341.839 186 307.337 186Z" fill="url(#paint1_linear_1_2)" filter="url(#filter9_f_1_2)"/>
+                </g>
+                
+                <g id="cloud-2" class="clickable cloud" data-name="Regenwolk" data-info="Regenval is het belangrijkste gebeurtenis in het woestijn-ecosysteem. Na regen bloeit de woestijn op: zaden kiemen, bloemen bloeien, en dieren worden actief. Water is de meest waardevolle bron in dit droge klimaat." data-type="water">
+                    <path d="M995 233C1024.43 233 1050.87 241.175 1069 254.149C1077.9 252.111 1087.5 251 1097.5 251C1132.05 251 1161.75 264.249 1174.85 283.229C1177.2 283.079 1179.58 283 1182 283C1217.9 283 1247 300.013 1247 321C1247 341.987 1217.9 359 1182 359C1166.89 359 1152.99 355.986 1141.95 350.932C1129.04 356.046 1113.81 359 1097.5 359C1079.24 359 1062.34 355.299 1048.52 349.008C1033.09 355.331 1014.72 359 995 359C974.905 359 956.208 355.19 940.596 348.643C928.956 355.062 913.265 359 896 359C860.101 359 831 341.987 831 321C831 300.013 860.101 283 896 283C896.704 283 897.406 283.008 898.104 283.021C907.506 254.454 947.315 233 995 233Z" fill="url(#paint2_linear_1_2)" filter="url(#filter10_f_1_2)"/>
+                </g>
+            </g>
+            
+            <!-- SVG Definitions -->
+            <defs>
+                <filter id="filter0_fg_1_2" x="429" y="335" width="474" height="474" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="23.5" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter1_f_1_2" x="899" y="441" width="432" height="186" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter2_f_1_2" x="931" y="436" width="405" height="185" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter3_f_1_2" x="-22" y="426" width="432" height="186" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter4_f_1_2" x="-27" y="421" width="405" height="185" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter5_f_1_2" x="-4" y="568" width="1340" height="182" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter6_f_1_2" x="-2" y="612.566" width="1336" height="135.434" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter7_f_1_2" x="924" y="507" width="91.4487" height="154" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter8_f_1_2" x="398" y="513" width="56.9985" height="75" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter9_f_1_2" x="116.7" y="177.7" width="317.6" height="110.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="4.15" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <filter id="filter10_f_1_2" x="822.7" y="224.7" width="432.6" height="142.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="4.15" result="effect1_foregroundBlur_1_2"/>
+                </filter>
+                <linearGradient id="paint0_linear_1_2" x1="666" y1="0" x2="666" y2="746" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F68A21"/>
+                    <stop offset="1" stop-color="#F9D689"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_1_2" x1="275.5" y1="186" x2="275.5" y2="280" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="white" stop-opacity="0.39"/>
+                </linearGradient>
+                <linearGradient id="paint2_linear_1_2" x1="1039" y1="233" x2="1039" y2="359" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="white" stop-opacity="0.39"/>
+                </linearGradient>
+                <clipPath id="clip0_1_2">
+                    <rect width="1332" height="746" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
 
+        <!-- Info panel -->
+        <div class="info-panel">
+            <h1>🏜️ Woestijn-ecosysteem</h1>
+            <p>Klik op de elementen in de SVG!</p>
+            <div class="stats">
+                <span>🌡️ <span id="temp">42</span>°C</span>
+                <span>💧 5% RV</span>
+                <span>💨 15 km/u</span>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div class="modal-type" id="modalType"></div>
+                <p id="modalInfo"></p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: #F68A21;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .desert-svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Clickable elementen */
+        .clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clickable:hover {
+            filter: brightness(1.2) drop-shadow(0 0 20px rgba(255,255,255,0.8));
+        }
+
+        /* Info panel */
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(139, 69, 19, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-panel h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info-panel p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #FFF5E6 0%, #FFE4B5 100%);
+            margin: 10% auto;
+            padding: 30px;
+            border: 4px solid #8B4513;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .close {
+            color: #8B4513;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close:hover {
+            color: #D2691E;
+            transform: rotate(90deg);
+        }
+
+        #modalTitle {
+            text-align: center;
+            color: #8B4513;
+            font-size: 28px;
+            margin: 15px 0;
+        }
+
+        .modal-type {
+            text-align: center;
+            margin: 10px auto;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            width: auto;
+            color: white;
+        }
+
+        #modalInfo {
+            background: rgba(255,255,255,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #DEB887;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+        // GSAP Animaties initialiseren
+        gsap.registerPlugin();
+
+        // Zon pulseren
+        gsap.to("#sun", {
+            scale: 1.25,
+            transformOrigin: "center center",
+            color:"#ffdf6b",
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Zon gloeien (opacity)
+        gsap.to("#sun circle", {
+            opacity: 0.8,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Cactussen zacht heen en weer bewegen
+        gsap.to("#cactus-left", {
+    rotation: 1, // Was 2
+    transformOrigin: "217px 698px",
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+});
+
+gsap.to("#cactus-mid", {
+    rotation: -0.75, // Was -1.5
+    transformOrigin: "971px 659px",
+    duration: 3.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    delay: 0.5
+});
+
+gsap.to("#cactus-right", {
+    rotation: 0.9, // Was 1.8
+    transformOrigin: "1190px 680px",
+    duration: 4.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    delay: 1
+});
+
+gsap.to("#small-plant", {
+    rotation: -1.25, // Was -2.5
+    transformOrigin: "426px 584px",
+    duration: 3,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    delay: 0.3
+});
+
+        // Wolken drijven
+        gsap.to("#cloud-1", {
+            x: 250,
+            duration: 30,
+            repeat: -1,
+            yoyo: true,
+            ease: "none"
+        });
+
+        gsap.to("#cloud-2", {
+            x: -200,
+            duration: 40,
+            repeat: -1,
+            yoyo: true,
+            ease: "none",
+            delay: 5
+        });
+
+        gsap.to("#cloud-1", {
+            opacity: 0.7,
+            duration: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        gsap.to("#cloud-2", {
+            opacity: 0.6,
+            duration: 10,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: 3
+        });
+
+        gsap.to("#mountain-left", {
+            y: -2,
+            duration: 6,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        gsap.to("#mountain-right", {
+            y: -1.5,
+            duration: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: 2
+        });
+
+        gsap.to("#sand-layer-1", {
+            scaleY: 1.02,
+            transformOrigin: "center bottom",
+            duration: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        gsap.to("#sand-layer-2", {
+            scaleY: 1.01,
+            transformOrigin: "center bottom",
+            duration: 7,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: 1
+        });
+
+        let tempElement = document.getElementById('temp');
+        gsap.to({value: 42}, {
+            value: 45,
+            duration: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            onUpdate: function() {
+                tempElement.textContent = Math.round(this.targets()[0].value);
+            }
+        });
+
+        const clickableElements = document.querySelectorAll('.clickable');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.close');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalType = document.getElementById('modalType');
+        const modalInfo = document.getElementById('modalInfo');
+
+        clickableElements.forEach(element => {
+            element.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const info = this.getAttribute('data-info');
+                const type = this.getAttribute('data-type');
+                
+                modalTitle.textContent = name;
+                modalInfo.textContent = info;
+                
+                let typeText = '';
+                let bgColor = '';
+                
+                switch(type) {
+                    case 'producent':
+                        typeText = '🌱 Producent';
+                        bgColor = '#4CAF50';
+                        break;
+                    case 'habitat':
+                        typeText = '🏔️ Habitat';
+                        bgColor = '#757575';
+                        break;
+                    case 'bodem':
+                        typeText = '🌍 Bodem';
+                        bgColor = '#8B4513';
+                        break;
+                    case 'water':
+                        typeText = '💧 Water';
+                        bgColor = '#2196F3';
+                        break;
+                    case 'energie':
+                        typeText = '☀️ Energie';
+                        bgColor = '#FF9800';
+                        break;
+                }
+                
+                modalType.textContent = typeText;
+                modalType.style.background = bgColor;
+                
+                modal.style.display = 'block';
+                gsap.fromTo('.modal-content', 
+                {
+                    scale: 0.5,
+                    opacity: 0
+                }, 
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "back.out(1.7)"
+                }
+            );
+            });
+
+            element.addEventListener('mouseenter', function() {
+                gsap.to(this, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            element.addEventListener('mouseleave', function() {
+                gsap.to(this, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            gsap.to('.modal-content', {
+                scale: 0.5,
+                opacity: 0,
+                duration: 0.3,
+                ease: "back.in(1.7)",
+                onComplete: () => {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                gsap.to('.modal-content', {
+                    scale: 0.5,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "back.in(1.7)",
+                    onComplete: () => {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
